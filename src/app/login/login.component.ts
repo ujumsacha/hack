@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router :Router) { }
 
   ngOnInit(): void {
     
@@ -19,7 +21,7 @@ export class LoginComponent implements OnInit {
 
     // }
 
-    document.head.removeAttribute('link');
+    // document.head.removeAttribute('link');
 
     var link = document.createElement('link');
     link.href = 'assets/dist/css/app.css';
@@ -27,11 +29,19 @@ export class LoginComponent implements OnInit {
    
     document.head.appendChild(link);
 
-    //document.head.removeAttribute('link');
+    document.head.removeAttribute('link');
     //**************************************************** */ ajout du font dasn la base de l'application ******************************************************************
       
     document.getElementsByTagName('body')[0].classList.add('login');  
     //**************************************************** */ ajout du font dasn la base de l'application ******************************************************************
   }
 
+  AcceuilNavigate()
+  {
+    this._router.navigate(['App']);
+  }
+  RegisterNavigate()
+  {
+    this._router.navigate(['Inscription']);
+  }
 }

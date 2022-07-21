@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-accueil',
@@ -20,7 +21,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class AccueilComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit(): void {
     document.head.removeAttribute('link');
@@ -70,4 +71,9 @@ export class AccueilComponent implements OnInit {
     //   document.getElementsByTagName('body')[0].classList.add('login');  
   }
 
+  AuthentificationNavigate()
+  {
+    this._router.navigate(['Authentification']);
+    // window.location.reload();
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router:Router) { }
 
   ngOnInit(): void {
 
@@ -17,11 +18,15 @@ export class RegisterComponent implements OnInit {
    
     document.head.appendChild(link);
 
-    //document.head.removeAttribute('link');
+    document.head.removeAttribute('link');
     //**************************************************** */ ajout du font dasn la base de l'application ******************************************************************
       
     document.getElementsByTagName('body')[0].classList.add('login');  
 
   }
 
+  AuthNavigate()
+  {
+    this._router.navigate(['Authentification']);
+  }
 }

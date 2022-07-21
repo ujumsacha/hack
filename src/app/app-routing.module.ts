@@ -11,6 +11,7 @@ const routes: Routes = [
   {path:'Authentification',component:LoginComponent},
   {path:'Inscription',component:RegisterComponent},
   {path:'App',component:LayoutPageComponent},
+  { path: '**', component:AccueilComponent }
 ];
 
 @NgModule({
